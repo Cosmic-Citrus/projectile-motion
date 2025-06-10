@@ -30,7 +30,7 @@ $v_{x}(t) = \frac{dx}{dt}|_{t}$
 
 $v_{z}(t) = \frac{dz}{dt}|_{t}$
 
-<img src="file:///Users/owner/Desktop/programming/projectile_motion/output/example_06-ensemble_with_variable_launch_angle_at_g_of_z/ProjectileMotionEnsemble-Var_launch_angle.png" title="" alt="example-ensemble_of_variable_launch_angle" data-align="center">
+<img src="output/example_06-ensemble_with_variable_launch_angle_at_g_of_z/ProjectileMotionEnsemble-Var_launch_angle.png" title="" alt="example-ensemble_of_variable_launch_angle" data-align="center">
 
 Given the initial launch speed $v_{0} = \sqrt{\bold{v} \cdot \bold{v}}|_{t=0}$ and initial launch angle $\phi_{0}$, we obtain the initial condition for this system of differential equations.
 
@@ -40,9 +40,9 @@ $v_{z}|_{t=0} \equiv \frac{dz}{dt}|_{t=0} = v_{0} \sin{\phi_{0}}$
 
 One can check for conservation of energy to verify the model.
 
-<img src="file:///Users/owner/Desktop/programming/projectile_motion/output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-Energies_VS_Time-wPeakTime.png" title="" alt="example-energy_conservation" data-align="center">
+<img src="output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-Energies_VS_Time-wPeakTime.png" title="" alt="example-energy_conservation" data-align="center">
 
-<img title="" src="file:///Users/owner/Desktop/programming/projectile_motion/output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-EnergyVar_VS_Time-wPeakTime.png" alt="example-negligible_energy_variance" data-align="center">
+<img title="" src="output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-EnergyVar_VS_Time-wPeakTime.png" alt="example-negligible_energy_variance" data-align="center">
 
 The accuracy of the model improves if one accounts for air resistance, which produces a drag force that acts in a manner similar to friction - this means that energy is not conserved. There are a variety of models to account for the drag force; this example uses the quadratic drag model. To further improve accuracy, one could use piece-wise velocity-dependent drag models. According to the quadratic drag model, the drag force is given by
 
@@ -56,7 +56,7 @@ $\rho$ is the air density
 
 $A_{c}$ is the cross-sectional area of the projectile (sphere $\implies$ $A_{c} = \pi r^2$)
 
-<img src="file:///Users/owner/Desktop/programming/projectile_motion/output/example_03-simulation_with_drag_at_constant_g/ProjectileMotionSimulation-SpeedsAndVelocities_VS_Time-wPeakTime.png" title="" alt="example-air_drag_and_terminal_velocity" data-align="center">
+<img src="output/example_03-simulation_with_drag_at_constant_g/ProjectileMotionSimulation-SpeedsAndVelocities_VS_Time-wPeakTime.png" title="" alt="example-air_drag_and_terminal_velocity" data-align="center">
 
 The model can be further improved further by accounting for the altitude $z$ of the projectile when calculating its acceleration due to gravity (as opposed to taking the value $g \approx 9.81 \frac{m}{s^2}$ to be constant). 
 
@@ -94,7 +94,7 @@ One can use this code to determine the optimal launch angle $\phi_{0}$; here, op
 
 
 
-![example-optimal_trajectory_with_variable_g](/Users/owner/Desktop/programming/projectile_motion/output/example_12-optimization_with_variable_launch_angle_at_g_of_z/TrajectoryOptimization-LongestArcLengthOfTrajectory_VS_1_Var-LaunchAngle.png)
+![example-optimal_trajectory_with_variable_g](output/example_12-optimization_with_variable_launch_angle_at_g_of_z/TrajectoryOptimization-LongestArcLengthOfTrajectory_VS_1_Var-LaunchAngle.png)
 
 ## 
 
