@@ -120,6 +120,13 @@ One can use this code to determine the optimal launch angle $\phi_{0}$; here, op
 * 0.1
   * Initial Release
 
+## To-Do
+* fix formatting of legend in plots
+
+* compare with projectiles of other shapes
+
+* account for rotation when calculating cross-sectional area of non-spherical projectile
+
 ## License
 
 This project is licensed under the Apache License - see the LICENSE file for details.
