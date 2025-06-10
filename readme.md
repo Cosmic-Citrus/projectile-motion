@@ -20,9 +20,9 @@ $m\frac{d^2z}{dt^2} = - mg$
 
 The solution to this system of differential equations is analytic.
 
-$x(t) = x_{0} + v_{x}(t)|_{x=x_{{0}}}$ $t$
+$x(t) = x_{0}$ $+$ $v_{x}(t)$ $\cdot$ $t$ (evaluated at $x=x_{0}$)
 
-$z(t) = z_{0} + v_{z}(t)|_{z=z_{0}}$ $t$ $- \frac{1}{2} g t^{2}$  
+$z(t) = z_{0}$ $+$ $v_{z}(t)$ $\cdot$ $t$ $-$ $\frac{1}{2}$ $g$ $t^{2}$ (evaluated at $z=z_{0}$)
 
 where
 
@@ -34,9 +34,9 @@ $v_{z}(t) = \frac{dz}{dt}|_{t}$
 
 Given the initial launch speed $v_{0} = \sqrt{\bold{v} \cdot \bold{v}}|_{t=0}$ and initial launch angle $\phi_{0}$, we obtain the initial condition for this system of differential equations.
 
-$v_{x}|_{t=0} \equiv \frac{dx}{dt}|_{t=0} = v_{0} \cos{\phi_{0}}$
+$v_{x, t=0}$ $\equiv$ $\frac{dx}{dt}$ (evaluated at $t=0$) = $v_{0} \cos{\phi_{0}}$
 
-$v_{z}|_{t=0} \equiv \frac{dz}{dt}|_{t=0} = v_{0} \sin{\phi_{0}}$
+$v_{z, t=0}$ $\equiv$ $\frac{dz}{dt}$ (evaluated at $t=0$) = $v_{0} \sin{\phi_{0}}$
 
 One can check for conservation of energy to verify the model.
 
@@ -125,7 +125,7 @@ One can use this code to determine the optimal launch angle $\phi_{0}$; here, op
 
 * compare with projectiles of other shapes
 
-* account for rotation when calculating cross-sectional area of non-spherical projectile
+* account for rotation when calculating cross-sectional area of non-spherical projectiles
 
 ## License
 
