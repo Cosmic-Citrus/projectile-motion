@@ -32,7 +32,7 @@ $v_{z}(t) = \frac{dz}{dt}|_{t}$
 
 <img src="output/example_06-ensemble_with_variable_launch_angle_at_g_of_z/ProjectileMotionEnsemble-Var_launch_angle.png" title="" alt="example-ensemble_of_variable_launch_angle" data-align="center">
 
-Given the initial launch speed $v_{0} = \sqrt{\bold{v} \cdot \bold{v}}|_{t=0}$ and initial launch angle $\phi_{0}$, we obtain the initial condition for this system of differential equations.
+Given the initial launch speed $v_{0}$ $=$ $\sqrt{\bold{v} \cdot \bold{v}}$ (evaluated at $t=0$) and initial launch angle $\phi_{0}$, the initial condition is obtained for this system of differential equations.
 
 $v_{x, t=0}$ $\equiv$ $\frac{dx}{dt}$ (evaluated at $t=0$) = $v_{0} \cos{\phi_{0}}$
 
