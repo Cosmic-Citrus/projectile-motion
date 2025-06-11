@@ -20,9 +20,9 @@ $m\frac{d^2z}{dt^2} = - mg$
 
 The solution to this system of differential equations is analytic.
 
-$x(t) = x_{0}$ $+$ $v_{x}(t)$ $\cdot$ $t$ (evaluated at $x=x_{0}$)
+$x(t) = x_{0}$ $+$ $v_{x}(t)$ $\cdot$ $t$
 
-$z(t) = z_{0}$ $+$ $v_{z}(t)$ $\cdot$ $t$ $-$ $\frac{1}{2}$ $g$ $t^{2}$ (evaluated at $z=z_{0}$)
+$z(t) = z_{0}$ $+$ $v_{z}(t)$ $\cdot$ $t$ $-$ $\frac{1}{2}$ $g$ $t^{2}$
 
 where
 
@@ -38,7 +38,7 @@ $v_{x, t=0}$ $\equiv$ $\frac{dx}{dt}$ (evaluated at $t=0$) = $v_{0} \cos{\phi_{0
 
 $v_{z, t=0}$ $\equiv$ $\frac{dz}{dt}$ (evaluated at $t=0$) = $v_{0} \sin{\phi_{0}}$
 
-One can check for conservation of energy to verify the model.
+One can verify that this model obeys the principle of conservation of energy.
 
 <img src="output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-Energies_VS_Time-wPeakTime.png" title="" alt="example-energy_conservation" data-align="center">
 
@@ -70,7 +70,7 @@ $M \approx 5.972 \times 10^{24}$ kg is the mass of Earth
 
 $R \approx 6371$ km is the radius of Earth
 
-There is no general analytic solution to account for these improvements, but the solution can be obtained numerically; this code uses `scipy.integrate.solve_ivp` to solve this system of differential equations. 
+There is no general analytic solution to account for air resistance and altitude-dependent acceleration due to gravity, but the solution can be obtained numerically; this code uses `scipy.integrate.solve_ivp` to solve this system of differential equations. 
 
 $m \frac{d^{2}x}{dt^2} = - k \sqrt{(\frac{dx}{dt})^{2} + (\frac{dz}{dt})^{2}} \frac{dx}{dt}$
 
@@ -90,13 +90,9 @@ One can use this code to determine the optimal launch angle $\phi_{0}$; here, op
 
 * the trajectory that maximizes the amount of time that the projectile stays airborne
 
-* the trajectory of the largest possible arc-length
-
-
+* the trajectory of the largest possible arc-length (shown below)
 
 ![example-optimal_trajectory_with_variable_g](output/example_12-optimization_with_variable_launch_angle_at_g_of_z/TrajectoryOptimization-LongestArcLengthOfTrajectory_VS_1_Var-LaunchAngle.png)
-
-## 
 
 ## Getting Started
 
