@@ -117,6 +117,7 @@ One can use this code to determine the optimal launch angle $\phi_{0}$; here, op
   * Initial Release
 
 ## To-Do
+* fix formatting of math-mode bold-face vectors in this readme
 * fix formatting of legend in plots
 
 * compare with projectiles of other shapes
