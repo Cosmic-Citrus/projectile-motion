@@ -1,6 +1,6 @@
 # Repo:    projectile-motion
 
-The purpose of this code is to analyze and optimize the trajectory of a spherical projectile.
+The purpose of this code is to analyze and optimize the trajectory of an airborne projectile.
 
 ## Description
 
