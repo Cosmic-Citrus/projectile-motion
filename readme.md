@@ -6,6 +6,8 @@ The purpose of this code is to model, analyze, and optimize the trajectory of an
 
 "What goes up must come down" is a famous quote that is sometimes misattributed to Isaac Newton. When applied to physics, this phrase is often interpreted as meaning that objects of mass that are airborne appear to fall down to the surface of the Earth due to the force of gravity. 
 
+<img src="output/example_06-ensemble_with_variable_launch_angle_at_g_of_z/ProjectileMotionEnsemble-Var_launch_angle.png" title="" alt="example-ensemble_of_variable_launch_angle" data-align="center">
+
 I will use bold-face font to denote vector quantities. Suppose one launches a projectile sphere of mass $m$ and radius $r$ - moving at velocity $𝒗$ in the $xz$-plane - and that the force of gravity $𝐅_{𝒈}$ acts upon the projectile.
 
 $𝐅_{𝒈} = - mg\hat{𝒛}$
@@ -31,8 +33,6 @@ $v_{x}(t) = \frac{dx}{dt}|_{t}$
 $v_{z}(t) = \frac{dz}{dt}|_{t}$
 
 $𝒗(t) = v_{x}(t)\hat{𝒙} + v_{z}(t)\hat{𝒛}$
-
-<img src="output/example_06-ensemble_with_variable_launch_angle_at_g_of_z/ProjectileMotionEnsemble-Var_launch_angle.png" title="" alt="example-ensemble_of_variable_launch_angle" data-align="center">
 
 Given the initial launch speed $v_{0}$ $=$ $\sqrt{𝒗 \cdot 𝒗}$ and initial launch angle $\phi_{0}$ (both evaluated at $t=0$), the initial condition is obtained for this system of differential equations.
 
