@@ -1,16 +1,16 @@
 # Repo:    projectile-motion
 
-The purpose of this code is to analyze and optimize the trajectory of an airborne projectile.
+The purpose of this code is to model, analyze, and optimize the trajectory of an airborne projectile that is subject to gravitational and drag forces.
 
 ## Description
 
-"What goes up must come down" is a famous quote that is often misattributed to Isaac Newton. When applied to physics, this phrase is often interpreted as meaning that objects of mass appear to fall back down because of gravity. One can account for the force of gravity to model the trajectory of a projectile.
+"What goes up must come down" is a famous quote that is sometimes misattributed to Isaac Newton. When applied to physics, this phrase is often interpreted as meaning that objects of mass that are airborne appear to fall down to the surface of the Earth due to the force of gravity. 
 
-Suppose one launches a projectile sphere of mass $m$ and radius $r$ - moving at velocity $v$ in the $xz$-plane - and that the force of gravity $F_{g}$ acts upon the projectile. I will use bold-face font to denote vectors below.
+I will use bold-face font to denote vector quantities. Suppose one launches a projectile sphere of mass $m$ and radius $r$ - moving at velocity $𝒗$ in the $xz$-plane - and that the force of gravity $𝐅_{𝒈}$ acts upon the projectile.
 
 $𝐅_{𝒈} = - mg\hat{𝒛}$
 
-where $g \approx 9.8 \frac{m}{s^2}$
+where $a_{g} = g \approx 9.8 \frac{m}{s^2}$
 
 We can use a system of differential equations to describe the motion of the projectile.
 
@@ -30,6 +30,8 @@ $v_{x}(t) = \frac{dx}{dt}|_{t}$
 
 $v_{z}(t) = \frac{dz}{dt}|_{t}$
 
+$𝒗(t) = v_{x}(t)\hat{𝒙} + v_{z}(t)\hat{𝒛}$
+
 <img src="output/example_06-ensemble_with_variable_launch_angle_at_g_of_z/ProjectileMotionEnsemble-Var_launch_angle.png" title="" alt="example-ensemble_of_variable_launch_angle" data-align="center">
 
 Given the initial launch speed $v_{0}$ $=$ $\sqrt{𝒗 \cdot 𝒗}$ and initial launch angle $\phi_{0}$ (both evaluated at $t=0$), the initial condition is obtained for this system of differential equations.
@@ -38,15 +40,13 @@ $v_{x, t=0}$ $\equiv$ $\frac{dx}{dt}$ (evaluated at $t=0$) = $v_{0} \cos{\phi_{0
 
 $v_{z, t=0}$ $\equiv$ $\frac{dz}{dt}$ (evaluated at $t=0$) = $v_{0} \sin{\phi_{0}}$
 
-$𝒗(t) = v_{x}(t)\hat{𝒙} + v_{z}(t)\hat{𝒛}$
-
 One can verify that this model obeys the principle of conservation of energy. Note that the moment that the projectile is at its peak is the same moment that the kinetic energy is at its minimum.
 
 <img src="output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-Energies_VS_Time-wPeakTime.png" title="" alt="example-energy_conservation" data-align="center">
 
 <img title="" src="output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-EnergyVar_VS_Time-wPeakTime.png" alt="example-negligible_energy_variance" data-align="center">
 
-The accuracy of the model improves if one accounts for air resistance, which produces a drag force that acts in a manner similar to friction - this means that energy is not conserved. There are a variety of models to account for the drag force; this example uses the quadratic drag model. To further improve accuracy, one could use piece-wise velocity-dependent drag models. According to the quadratic drag model, the drag force is given by
+The accuracy of the model improves if one accounts for air resistance, which produces a drag force that acts in a manner similar to friction in the sense that energy is not conserved. There are a variety of models to account for the drag force; this code uses the quadratic drag model. To further improve accuracy, one could use piece-wise velocity-dependent drag models. According to the quadratic drag model, the drag force is given by
 
 $𝐅_{𝑫} = - \frac{1}{2} C_{d} \rho_{air} A_{c} v^{2} \hat{𝒗}$
 
@@ -62,7 +62,9 @@ $A_{c}$ is the cross-sectional area of the projectile (sphere $\implies$ $A_{c} 
 
 The model can be further improved by accounting for the altitude $z$ of the projectile when calculating its acceleration due to gravity (as opposed to taking the value $g \approx 9.8 \frac{m}{s^2}$ to be constant). 
 
-$g \equiv g(z) = \frac{GM}{(R + z)^2}$
+$g \equiv g(z) = \frac{GM}{(R + z)^2}$ 
+
+$g(z=0) = 9.8 \frac{m}{s^2}$
 
 where
 
@@ -92,7 +94,9 @@ One can use this code to determine the optimal launch angle $\phi_{0}$; here, op
 
 * the trajectory that maximizes the amount of time that the projectile stays airborne
 
-* the trajectory of the largest possible arc-length (shown below)
+* the trajectory of the largest possible arc-length
+
+To visually confirm that the calculated extremum is a true maximum, one can plot the optimized parameters against an ensemble of bounded values of $\phi_{0}$. The plot below shows this for the trajectory of the largest possible arc-length.
 
 ![example-optimal_trajectory_with_variable_g](output/example_12-optimization_with_variable_launch_angle_at_g_of_z/TrajectoryOptimization-LongestArcLengthOfTrajectory_VS_1_Var-LaunchAngle.png)
 
