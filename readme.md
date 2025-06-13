@@ -6,11 +6,11 @@ The purpose of this code is to analyze and optimize the trajectory of an airborn
 
 "What goes up must come down" is a famous quote that is often misattributed to Isaac Newton. When applied to physics, this phrase is often interpreted as meaning that objects of mass appear to fall back down because of gravity. One can account for the force of gravity to model the trajectory of a projectile.
 
-Suppose one launches a projectile sphere of mass $m$ and radius $r$ - moving at velocity $v$ in the $xz$-plane - and that the force of gravity $F_{g}$ acts upon the projectile. 
+Suppose one launches a projectile sphere of mass $m$ and radius $r$ - moving at velocity $v$ in the $xz$-plane - and that the force of gravity $F_{g}$ acts upon the projectile. I will use bold-face font to denote vectors below.
 
-$\bold{F_{g}} = - mg\bold{\hat{z}}$
+$𝐅_{𝒈} = - mg\hat{𝒛}$
 
-where $g \approx 9.81 \frac{m}{s^2}$
+where $g \approx 9.8 \frac{m}{s^2}$
 
 We can use a system of differential equations to describe the motion of the projectile.
 
@@ -32,13 +32,15 @@ $v_{z}(t) = \frac{dz}{dt}|_{t}$
 
 <img src="output/example_06-ensemble_with_variable_launch_angle_at_g_of_z/ProjectileMotionEnsemble-Var_launch_angle.png" title="" alt="example-ensemble_of_variable_launch_angle" data-align="center">
 
-Given the initial launch speed $v_{0}$ $=$ $\sqrt{\bold{v} \cdot \bold{v}}$ (evaluated at $t=0$) and initial launch angle $\phi_{0}$, the initial condition is obtained for this system of differential equations.
+Given the initial launch speed $v_{0}$ $=$ $\sqrt{𝒗 \cdot 𝒗}$ and initial launch angle $\phi_{0}$ (both evaluated at $t=0$), the initial condition is obtained for this system of differential equations.
 
 $v_{x, t=0}$ $\equiv$ $\frac{dx}{dt}$ (evaluated at $t=0$) = $v_{0} \cos{\phi_{0}}$
 
 $v_{z, t=0}$ $\equiv$ $\frac{dz}{dt}$ (evaluated at $t=0$) = $v_{0} \sin{\phi_{0}}$
 
-One can verify that this model obeys the principle of conservation of energy.
+$𝒗(t) = v_{x}(t)\hat{𝒙} + v_{z}(t)\hat{𝒛}$
+
+One can verify that this model obeys the principle of conservation of energy. Note that the moment that the projectile is at its peak is the same moment that the kinetic energy is at its minimum.
 
 <img src="output/example_01-simulation_without_drag_at_constant_g/ProjectileMotionSimulation-Energies_VS_Time-wPeakTime.png" title="" alt="example-energy_conservation" data-align="center">
 
@@ -46,19 +48,19 @@ One can verify that this model obeys the principle of conservation of energy.
 
 The accuracy of the model improves if one accounts for air resistance, which produces a drag force that acts in a manner similar to friction - this means that energy is not conserved. There are a variety of models to account for the drag force; this example uses the quadratic drag model. To further improve accuracy, one could use piece-wise velocity-dependent drag models. According to the quadratic drag model, the drag force is given by
 
-$\bold{F_{D}} = - \frac{1}{2} C \rho A_{c} v^2 \bold{\hat{v}}$
+$𝐅_{𝑫} = - \frac{1}{2} C_{D} \rho_{air} A_{c} v^{2} \hat{𝒗}$
 
 where
 
-$C$ is the drag coefficient of the projectile
+$C_{D}$ is the drag coefficient of the projectile
 
-$\rho$ is the air density
+$\rho_{air}$ is the air density
 
 $A_{c}$ is the cross-sectional area of the projectile (sphere $\implies$ $A_{c} = \pi r^2$)
 
 <img src="output/example_03-simulation_with_drag_at_constant_g/ProjectileMotionSimulation-SpeedsAndVelocities_VS_Time-wPeakTime.png" title="" alt="example-air_drag_and_terminal_velocity" data-align="center">
 
-The model can be further improved further by accounting for the altitude $z$ of the projectile when calculating its acceleration due to gravity (as opposed to taking the value $g \approx 9.81 \frac{m}{s^2}$ to be constant). 
+The model can be further improved by accounting for the altitude $z$ of the projectile when calculating its acceleration due to gravity (as opposed to taking the value $g \approx 9.8 \frac{m}{s^2}$ to be constant). 
 
 $g \equiv g(z) = \frac{GM}{(R + z)^2}$
 
@@ -78,7 +80,7 @@ $m \frac{d^{2}z}{dt^2} = - k \sqrt{(\frac{dx}{dt})^{2} + (\frac{dz}{dt})^{2}} \f
 
 where
 
-$k = \frac{1}{2} C \rho A_{c}$
+$k = \frac{1}{2} C_{D} \rho_{air} A_{c}$
 
 One can use this code to determine the optimal launch angle $\phi_{0}$; here, optimal can refer to:
 
@@ -117,12 +119,9 @@ One can use this code to determine the optimal launch angle $\phi_{0}$; here, op
   * Initial Release
 
 ## To-Do
-* fix formatting of math-mode bold-face vectors in this readme
 * fix formatting of legend in plots
 
-* compare with projectiles of other shapes
-
-* account for rotation when calculating cross-sectional area of non-spherical projectiles
+* compare with projectiles of other shapes (account for rotation if $A_{c}$ is not constant)
 
 ## License
 
