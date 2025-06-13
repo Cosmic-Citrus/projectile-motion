@@ -48,11 +48,11 @@ One can verify that this model obeys the principle of conservation of energy. No
 
 The accuracy of the model improves if one accounts for air resistance, which produces a drag force that acts in a manner similar to friction - this means that energy is not conserved. There are a variety of models to account for the drag force; this example uses the quadratic drag model. To further improve accuracy, one could use piece-wise velocity-dependent drag models. According to the quadratic drag model, the drag force is given by
 
-$𝐅_{𝑫} = - \frac{1}{2} C_{D} \rho_{air} A_{c} v^{2} \hat{𝒗}$
+$𝐅_{𝑫} = - \frac{1}{2} C_{d} \rho_{air} A_{c} v^{2} \hat{𝒗}$
 
 where
 
-$C_{D}$ is the drag coefficient of the projectile
+$C_{d}$ is the drag coefficient of the projectile
 
 $\rho_{air}$ is the air density
 
@@ -80,7 +80,7 @@ $m \frac{d^{2}z}{dt^2} = - k \sqrt{(\frac{dx}{dt})^{2} + (\frac{dz}{dt})^{2}} \f
 
 where
 
-$k = \frac{1}{2} C_{D} \rho_{air} A_{c}$
+$k = \frac{1}{2} C_{d} \rho_{air} A_{c}$
 
 One can use this code to determine the optimal launch angle $\phi_{0}$; here, optimal can refer to:
 
